@@ -2,14 +2,25 @@ provider "aws" {
     region = var.region
 }
 
-data "aws_ami" "amazon_linux" {
+data "aws_ami" "busmatick_ubuntu" {
     most_recent = true
-    owners = ["amazon"]
+    owners = ["self"]
 
     filter {
-        name = "name"
-        values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+        name = "tag:app"
+        values = ["Busmatick"]
     }
+
+    filter {
+      name = "tag:purpose"
+      values = ["automation"]
+    }
+
+    filter {
+        name = "tag:env"
+        values = ["deployment"]
+    }
+    
 }
 
 module "vpc" {
@@ -62,5 +73,5 @@ module "ec2" {
 
 
 
-    user_data = file("${path.module}/user_data.sh")
+#    user_data = file("${path.module}/user_data.sh")
 }
