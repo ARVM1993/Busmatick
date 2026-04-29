@@ -1,8 +1,13 @@
 packer { #configuración general de packer
-    required_plugins {
-        amazon = {
-            source = "github.com/hashicorp/amazon" #repositorio del plugin
-            version = "~> 1"
-        }
+  required_plugins {
+    amazon = {
+      source  = "github.com/hashicorp/amazon"
+      version = ">= 1.0.0"
     }
+
+    ansible = {
+      source  = "github.com/hashicorp/ansible"
+      version = ">= 1.0.0"
+    }
+  }
 }
