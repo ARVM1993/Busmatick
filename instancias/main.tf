@@ -65,7 +65,7 @@ module "ec2" {
     source = "./modules/ec2"
 
     instance_count = 2
-    ami_id = data.aws_ami.amazon_linux.id
+    ami = data.aws_ami.busmatick_ubuntu.id
     instance_type = "t2.micro"
     key_name = "Clave_IPs"
     subnet_id = module.subnet.subnet_id
