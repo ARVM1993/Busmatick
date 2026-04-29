@@ -30,7 +30,7 @@ jobs:
           aws-region: us-east-1
 
       - name: Build AMI
-        working-directory: AMI
+        working-directory: packer
         run: |
           packer init .
           packer build .
