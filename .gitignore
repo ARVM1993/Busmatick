@@ -1,0 +1,10 @@
+# Ignorar archivos de Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfplan
+*.lock.hcl
+
+# Ignorar directorios de providers
+**/.terraform/
+**/.terraform/providers/
