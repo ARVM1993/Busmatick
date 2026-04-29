@@ -8,6 +8,9 @@
         update_cache: yes
         cache_valid_time: 3600
 
+    - name: Corregir posibles paquetes rotos
+      shell: apt-get -f install -y
+
     - name: Instalar dependencias básicas
       apt:
         name:
@@ -15,19 +18,10 @@
           - mariadb-client
           - python3-pymysql
         state: present
+        update_cache: yes
 
     - name: Asegurar que MariaDB esté iniciado
       systemd:
         name: mariadb
         state: started
         enabled: true
-
-    - name: Asegurar instalación segura básica (root sin password remoto)
-      mysql_user:
-        name: root
-        host: localhost
-        check_implicit_admin: true
-        password: ""
-        plugin: mysql_native_password
-        state: present
-      ignore_errors: true
