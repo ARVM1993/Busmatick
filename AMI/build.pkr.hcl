@@ -9,4 +9,6 @@ build {
             "sudo systemctl start mariadb"
         ]
     }
+
+    post-processor "manifest" {}
 }

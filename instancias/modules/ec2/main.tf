@@ -7,7 +7,8 @@ resource "aws_instance" "this" {
   user_data             = var.user_data
   subnet_id = var.subnet_id
   tags = {
-    Name = "EC2-${count.index + 1}"
+    
+    Name = "EC2-Busmatick${count.index + 1}"
   }
 
 }

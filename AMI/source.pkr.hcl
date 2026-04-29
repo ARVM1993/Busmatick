@@ -14,4 +14,11 @@ source "amazon-ebs" "ubuntu" {
 
     ssh_username = "ubuntu" #Usuario por defecto de la imagen
     ami_name = "ubuntu-2204-{{timestamp}}" #Nombre de la imagen
+
+    tags = {
+        app = "Busmatick"
+        purpose = "automation"
+        env = "deployment"
+        version = "1.0.0"
+    }
 }
