@@ -31,7 +31,8 @@ jobs:
           packer init .
           packer build .
           
- deploy-infra:
+  deploy-infra:
+  
     needs: build-ami
     runs-on: ubuntu-latest
 
