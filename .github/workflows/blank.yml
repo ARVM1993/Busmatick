@@ -1,4 +1,5 @@
-name: Integracion Completa: Packer + Ansible + Terraform
+
+name: Despliegue Packer, Ansible y Terraform
 
 on:
   workflow_dispatch:
