@@ -67,7 +67,7 @@ module "ec2" {
     instance_count = 1
     ami = data.aws_ami.busmatick_ubuntu.id
     instance_type = "t2.micro"
-    key_name = "AWS"
+    key_name = "Clave_IPs"
     subnet_id = module.subnet.subnet_id
     security_group_ids = [module.sg.security_group_id]
 
